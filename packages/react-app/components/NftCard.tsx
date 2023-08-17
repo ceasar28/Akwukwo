@@ -4,7 +4,7 @@ interface CardProps {
   image: string;
   title: string;
   author: string;
-  volume: number;
+  //   volume: number;
   owner: string;
   price: number;
 }
@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({
       <div className="p-4">
         <h2 className="text-xl font-semibold mb-2">{title}</h2>
         <p className="text-gray-600 mb-1">By {author}</p>
-        <p className="text-gray-600 mb-1"> {volume} available</p>
+        {/* <p className="text-gray-600 mb-1"> {volume} available</p> */}
         <p className="text-gray-600 mb-1"> {owner}</p>
         <p className="text-green-600 font-semibold">
           {price.toFixed(2)} Ethers
