@@ -6,7 +6,7 @@ export default function Explore() {
   return (
     <div>
       <div>
-        <div className="grid grid-cols-4 gap-4 p-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 sm:p-6 lg:p-8">
           {dummyData.map((item, index) => (
             <NftCard
               key={index}
