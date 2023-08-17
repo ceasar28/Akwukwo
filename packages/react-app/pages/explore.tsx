@@ -6,6 +6,7 @@ export default function Explore() {
   return (
     <div>
       <div>
+        <h2> All listed Books</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 sm:p-6 lg:p-8">
           {dummyData.map((item, index) => (
             <NftCard
@@ -13,6 +14,7 @@ export default function Explore() {
               image={item.image}
               title={item.title}
               author={item.author}
+              volume={item.volume}
               owner={item.owner}
               price={item.price}
             />
