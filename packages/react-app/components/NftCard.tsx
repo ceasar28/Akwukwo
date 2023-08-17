@@ -13,7 +13,7 @@ const Card: React.FC<CardProps> = ({
   image,
   title,
   author,
-  volume,
+  //   volume,
   owner,
   price,
 }) => {
