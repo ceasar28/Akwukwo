@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 interface CardProps {
   image: string;
@@ -17,6 +18,7 @@ const Card: React.FC<CardProps> = ({
   owner,
   price,
 }) => {
+  const router: any = useRouter();
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <img src={image} alt={title} className="w-full h-40 object-cover" />
@@ -29,11 +31,16 @@ const Card: React.FC<CardProps> = ({
           {price.toFixed(2)} Ethers
         </p>
         <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg">
-          View
+          {router.route === "/profile" ? "Read" : "View"}
+          {/* View */}
         </button>
-        <button className="mt-2 mx-2 px-4 py-2 bg-blue-500 text-white rounded-lg">
-          Buy
-        </button>
+        {router.route === "/explore" ? (
+          <button className="mt-2 mx-2 px-4 py-2 bg-blue-500 text-white rounded-lg">
+            Buy
+          </button>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
