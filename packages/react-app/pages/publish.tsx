@@ -43,6 +43,7 @@ const findMetaMaskAccount = async (): Promise<string | null> => {
 export default function Publish() {
   const [wallet, setWallet] = useState<string | null>(null);
   const [name, setName] = useState<string>("");
+  const [author, setAuthor] = useState<string>("");
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [selectedPDF, setSelectedPDF] = useState<File | null>(null);
@@ -54,6 +55,10 @@ export default function Publish() {
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
+  };
+
+  const handleAuthorChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setAuthor(event.target.value);
   };
 
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -90,6 +95,7 @@ export default function Publish() {
     event.preventDefault();
     console.log("Form submitted:", {
       name,
+      author,
       selectedImage,
       selectedPDF,
       textBoxValue,
@@ -104,6 +110,7 @@ export default function Publish() {
       if (pinPdf && pinImg) {
         const meta = await uploadJSONToIPFS({
           name: name,
+          author: author,
           decription: textBoxValue,
           imageurl: pinImg.pinataURL,
           resourcesUrl: pinPdf.pinataURL,
@@ -144,6 +151,21 @@ export default function Publish() {
             className="form-input w-full"
             value={name}
             onChange={handleNameChange}
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="author"
+          >
+            Author
+          </label>
+          <input
+            type="text"
+            id="author"
+            className="form-input w-full"
+            value={author}
+            onChange={handleAuthorChange}
           />
         </div>
         <div className="mb-4">
