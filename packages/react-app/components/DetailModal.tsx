@@ -32,7 +32,9 @@ const Modal: React.FC<ModalProps> = ({
         <div className="modal-image mr-4">
           <img src={image} alt={title} className="w-40 h-auto object-cover" />
           {router.route === "/profile" ? (
-            <></>
+            <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg w-full">
+              Read
+            </button>
           ) : (
             <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg w-full">
               Buy
@@ -51,7 +53,7 @@ const Modal: React.FC<ModalProps> = ({
         onClick={onClose}
         className="modal-close absolute top-2 right-0 p-5 text-black-500 hover:text-gray-1700 font-bold text-xl"
       >
-        Close &#10005;
+        Close &#x2716;
       </button>
     </div>
   );
