@@ -51,7 +51,7 @@ const Modal: React.FC<ModalProps> = ({
         onClick={onClose}
         className="modal-close absolute top-2 right-0 p-5 text-black-500 hover:text-gray-1700 font-bold text-xl"
       >
-        Close &#10005;
+        Close &#x2716;
       </button>
     </div>
   );
