@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
+import Modal from "../components/DetailModal";
 
 interface CardProps {
   image: string;
@@ -18,7 +19,16 @@ const Card: React.FC<CardProps> = ({
   owner,
   price,
 }) => {
+  const [isOpen, Close] = useState<boolean | null>(false);
   const router: any = useRouter();
+
+  const handleModal = () => {
+    Close(true);
+  };
+  const closeModal = () => {
+    Close(false);
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <img src={image} alt={title} className="w-full h-40 object-cover" />
@@ -30,7 +40,10 @@ const Card: React.FC<CardProps> = ({
         <p className="text-green-600 font-semibold">
           {price.toFixed(2)} Ethers
         </p>
-        <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg">
+        <button
+          className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg"
+          onClick={handleModal}
+        >
           {router.route === "/profile" ? "Read" : "View"}
           {/* View */}
         </button>
@@ -39,9 +52,27 @@ const Card: React.FC<CardProps> = ({
             Buy
           </button>
         ) : (
-          <></>
+          <button
+            className="mt-2 mx-2 px-4 py-2 bg-blue-500 text-white rounded-lg"
+            onClick={handleModal}
+          >
+            View
+          </button>
         )}
       </div>
+      {isOpen === true ? (
+        <Modal
+          onClose={closeModal}
+          image={image}
+          title={title}
+          author={author}
+          description="uweporwoeorwklkejrpoweowpwpl"
+          owner={owner}
+          price={price}
+        ></Modal>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
