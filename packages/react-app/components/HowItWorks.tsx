@@ -1,4 +1,6 @@
 import React from "react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import Link from "next/link";
 
 const LandingPageSection: React.FC = () => {
   return (
@@ -14,193 +16,115 @@ const LandingPageSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-10 gap-y-6 md:gap-x-6">
-            <a
-              href="/explore"
-              rel="noopener"
-            >
+            {/* connect wallet */}
+            <Link href="#" rel="noopener">
               <div className="bg-white rounded-lg border-borderColor border py-6 px-4 h-80 hover:border-blue relative group">
                 <h4 className="text-xl pb-1 text-blue font-latoBold">
-                  Connect Wallet to the blockchain
+                  Connect To the Blockchain
                 </h4>
                 <p className="text-sm text-gray font-sfProSemiBold pb-4">
-                  easy wallet connection and more options
+                  Diverse Wallet Support
                 </p>
                 <p className="text-sm text-gray font-sfProRegular pb-4">
-                  Built with celo-composer, which offers a seamless wallet.
+                  Seamlessly integrate your preferred wallet for instant
+                  blockchain access. Our broad wallet support ensures secure
+                  asset management, transactions, and confident engagement in
+                  decentralized apps.
                 </p>
                 <div className="flex absolute bottom-6 content-center">
-                  <p className="text-sm text-blue font-sfProRegular mr-3.5">
-                    Start coding online
-                  </p>
-                  <img
-                    className="invisible group-hover:visible"
-                    src="/static/media/right-arrow-blue.df008ce98318fb5a1fddadbc20893db4.svg"
-                    alt="arrow"
+                  <ConnectButton
+                    showBalance={{ smallScreen: false, largeScreen: false }}
                   />
                 </div>
               </div>
-            </a>
-            {/* Other similar divs go here */}
+            </Link>
 
-            <a
-              href="https://remix.ethereum.org/"
-              target="_blank"
-              rel="noopener"
-            >
+            {/* PUblish */}
+
+            <Link href="/publish" rel="noopener">
               <div className="bg-white rounded-lg border-borderColor border py-6 px-4 h-80 hover:border-blue relative group">
                 <h4 className="text-xl pb-1 text-blue font-latoBold">
-                  Remix Online IDE
+                  Publish Your Work
                 </h4>
                 <p className="text-sm text-gray font-sfProSemiBold pb-4">
-                  Web-based DevEnvironment
+                  And unlock NFT Book Publishing Now!
                 </p>
                 <p className="text-sm text-gray font-sfProRegular pb-4">
-                  Remix Online IDE is a powerful toolset for developing,
-                  deploying, debugging, and testing Ethereum and EVM-compatible
-                  smart contracts. It requires no setup and has a flexible,
-                  intuitive user interface.
+                  We offer a free book nft minting and listing service.
                 </p>
                 <div className="flex absolute bottom-6 content-center">
-                  <p className="text-sm text-blue font-sfProRegular mr-3.5">
-                    Start coding online
-                  </p>
-                  <img
-                    className="invisible group-hover:visible"
-                    src="/static/media/right-arrow-blue.df008ce98318fb5a1fddadbc20893db4.svg"
-                    alt="arrow"
-                  />
+                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Try it out
+                  </button>
                 </div>
               </div>
-            </a>
+            </Link>
+
+            {/* Explore */}
+
+            <Link href="/explore" rel="noopener">
+              <div className="bg-white rounded-lg border-borderColor border py-6 px-4 h-80 hover:border-blue relative group">
+                <h4 className="text-xl pb-1 text-blue font-latoBold">
+                  Explore
+                </h4>
+                <p className="text-sm text-gray font-sfProSemiBold pb-4">
+                  The Digital World of Books
+                </p>
+                <p className="text-sm text-gray font-sfProRegular pb-4">
+                  Embark on a journey into the digital realm of books and
+                  literary creations.
+                </p>
+                <div className="flex absolute bottom-6 content-center">
+                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Explore
+                  </button>
+                </div>
+              </div>
+            </Link>
             {/* another */}
 
-            <a
-              href="https://remix.ethereum.org/"
-              target="_blank"
-              rel="noopener"
-            >
+            <Link href="/profile" rel="noopener">
               <div className="bg-white rounded-lg border-borderColor border py-6 px-4 h-80 hover:border-blue relative group">
                 <h4 className="text-xl pb-1 text-blue font-latoBold">
-                  Remix Online IDE
+                  Personal Library
                 </h4>
                 <p className="text-sm text-gray font-sfProSemiBold pb-4">
-                  Web-based DevEnvironment
+                  Access to your own collection of books
                 </p>
                 <p className="text-sm text-gray font-sfProRegular pb-4">
-                  Remix Online IDE is a powerful toolset for developing,
-                  deploying, debugging, and testing Ethereum and EVM-compatible
-                  smart contracts. It requires no setup and has a flexible,
-                  intuitive user interface.
+                  Empowering Authors and Readers: Manage NFT Books, Sales,
+                  Resales, and Pricing..
                 </p>
                 <div className="flex absolute bottom-6 content-center">
-                  <p className="text-sm text-blue font-sfProRegular mr-3.5">
-                    Start coding online
-                  </p>
-                  <img
-                    className="invisible group-hover:visible"
-                    src="/static/media/right-arrow-blue.df008ce98318fb5a1fddadbc20893db4.svg"
-                    alt="arrow"
-                  />
+                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    My Books
+                  </button>
                 </div>
               </div>
-            </a>
-            {/* another */}
+            </Link>
 
-            <a
-              href="https://remix.ethereum.org/"
-              target="_blank"
-              rel="noopener"
-            >
-              <div className="bg-white rounded-lg border-borderColor border py-6 px-4 h-80 hover:border-blue relative group">
-                <h4 className="text-xl pb-1 text-blue font-latoBold">
-                  Remix Online IDE
-                </h4>
-                <p className="text-sm text-gray font-sfProSemiBold pb-4">
-                  Web-based DevEnvironment
-                </p>
-                <p className="text-sm text-gray font-sfProRegular pb-4">
-                  Remix Online IDE is a powerful toolset for developing,
-                  deploying, debugging, and testing Ethereum and EVM-compatible
-                  smart contracts. It requires no setup and has a flexible,
-                  intuitive user interface.
-                </p>
-                <div className="flex absolute bottom-6 content-center">
-                  <p className="text-sm text-blue font-sfProRegular mr-3.5">
-                    Start coding online
-                  </p>
-                  <img
-                    className="invisible group-hover:visible"
-                    src="/static/media/right-arrow-blue.df008ce98318fb5a1fddadbc20893db4.svg"
-                    alt="arrow"
-                  />
-                </div>
-              </div>
-            </a>
-
-            {/* another */}
-            <a
-              href="https://remix.ethereum.org/"
-              target="_blank"
-              rel="noopener"
-            >
-              <div className="bg-white rounded-lg border-borderColor border py-6 px-4 h-80 hover:border-blue relative group">
-                <h4 className="text-xl pb-1 text-blue font-latoBold">
-                  Remix Online IDE
-                </h4>
-                <p className="text-sm text-gray font-sfProSemiBold pb-4">
-                  Web-based DevEnvironment
-                </p>
-                <p className="text-sm text-gray font-sfProRegular pb-4">
-                  Remix Online IDE is a powerful toolset for developing,
-                  deploying, debugging, and testing Ethereum and EVM-compatible
-                  smart contracts. It requires no setup and has a flexible,
-                  intuitive user interface.
-                </p>
-                <div className="flex absolute bottom-6 content-center">
-                  <p className="text-sm text-blue font-sfProRegular mr-3.5">
-                    Start coding online
-                  </p>
-                  <img
-                    className="invisible group-hover:visible"
-                    src="/static/media/right-arrow-blue.df008ce98318fb5a1fddadbc20893db4.svg"
-                    alt="arrow"
-                  />
-                </div>
-              </div>
-            </a>
+            {/* Royalty/}
+           
 
             {/* another */}
 
-            <a
-              href="https://remix.ethereum.org/"
-              target="_blank"
-              rel="noopener"
-            >
+            <Link href="#" rel="noopener">
               <div className="bg-white rounded-lg border-borderColor border py-6 px-4 h-80 hover:border-blue relative group">
                 <h4 className="text-xl pb-1 text-blue font-latoBold">
-                  Remix Online IDE
+                  Royalty and Sales
                 </h4>
                 <p className="text-sm text-gray font-sfProSemiBold pb-4">
-                  Web-based DevEnvironment
+                  Royalty - 10%, sale- 5%
                 </p>
                 <p className="text-sm text-gray font-sfProRegular pb-4">
-                  Remix Online IDE is a powerful toolset for developing,
-                  deploying, debugging, and testing Ethereum and EVM-compatible
-                  smart contracts. It requires no setup and has a flexible,
-                  intuitive user interface.
+                  We want authors to benefit from the see change of NFT, 10% of
+                  any future resale of thier work, and also readers to be able
+                  to resale thier collections too. We charge a 5% on every
+                  single sales transaction on the platform
                 </p>
-                <div className="flex absolute bottom-6 content-center">
-                  <p className="text-sm text-blue font-sfProRegular mr-3.5">
-                    Start coding online
-                  </p>
-                  <img
-                    className="invisible group-hover:visible"
-                    src="/static/media/right-arrow-blue.df008ce98318fb5a1fddadbc20893db4.svg"
-                    alt="arrow"
-                  />
-                </div>
+                <div className="flex absolute bottom-6 content-center"></div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

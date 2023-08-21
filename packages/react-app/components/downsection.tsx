@@ -9,8 +9,10 @@ const FooterSection: React.FC = () => {
             <h1>Powered by Bunzz and celo</h1>
             <img
               className="mb-11 md:mb-0"
-              src="/static/media/remix-logo.492b26c57aa2522a31e26f9f83e1c973.svg"
-              alt="logo"
+              width="100px"
+              src="https://github.com/celo-org/celo-composer/blob/main/images/readme/celo_isotype.svg"
+              align="center"
+              alt="Celo"
             />
           </div>
           <div className="mb-11 md:mb-0">
