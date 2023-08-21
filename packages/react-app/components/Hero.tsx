@@ -19,11 +19,12 @@ const HeroSection: React.FC = () => {
           new and exciting content for the first time.. We are Just at beginning
           of NFTS Books capabilities
         </p>
-        <div>
+
+        <div className=" relative m-auto sm:h-[30rem] rounded-[1.25rem] max-w-4xl h-full border-[0.375rem] border-magenta">
           <Image
             src={illustrations}
             alt="book illsutrations"
-            className="illustration"
+            className="m-auto object-cover h-auto w-auto"
           />
         </div>
       </div>
