@@ -140,6 +140,71 @@ const LandingPageSection: React.FC = () => {
                 </div>
               </div>
             </a>
+
+            {/* another */}
+            <a
+              href="https://remix.ethereum.org/"
+              target="_blank"
+              rel="noopener"
+            >
+              <div className="bg-white rounded-lg border-borderColor border py-6 px-4 h-80 hover:border-blue relative group">
+                <h4 className="text-xl pb-1 text-blue font-latoBold">
+                  Remix Online IDE
+                </h4>
+                <p className="text-sm text-gray font-sfProSemiBold pb-4">
+                  Web-based DevEnvironment
+                </p>
+                <p className="text-sm text-gray font-sfProRegular pb-4">
+                  Remix Online IDE is a powerful toolset for developing,
+                  deploying, debugging, and testing Ethereum and EVM-compatible
+                  smart contracts. It requires no setup and has a flexible,
+                  intuitive user interface.
+                </p>
+                <div className="flex absolute bottom-6 content-center">
+                  <p className="text-sm text-blue font-sfProRegular mr-3.5">
+                    Start coding online
+                  </p>
+                  <img
+                    className="invisible group-hover:visible"
+                    src="/static/media/right-arrow-blue.df008ce98318fb5a1fddadbc20893db4.svg"
+                    alt="arrow"
+                  />
+                </div>
+              </div>
+            </a>
+
+            {/* another */}
+
+            <a
+              href="https://remix.ethereum.org/"
+              target="_blank"
+              rel="noopener"
+            >
+              <div className="bg-white rounded-lg border-borderColor border py-6 px-4 h-80 hover:border-blue relative group">
+                <h4 className="text-xl pb-1 text-blue font-latoBold">
+                  Remix Online IDE
+                </h4>
+                <p className="text-sm text-gray font-sfProSemiBold pb-4">
+                  Web-based DevEnvironment
+                </p>
+                <p className="text-sm text-gray font-sfProRegular pb-4">
+                  Remix Online IDE is a powerful toolset for developing,
+                  deploying, debugging, and testing Ethereum and EVM-compatible
+                  smart contracts. It requires no setup and has a flexible,
+                  intuitive user interface.
+                </p>
+                <div className="flex absolute bottom-6 content-center">
+                  <p className="text-sm text-blue font-sfProRegular mr-3.5">
+                    Start coding online
+                  </p>
+                  <img
+                    className="invisible group-hover:visible"
+                    src="/static/media/right-arrow-blue.df008ce98318fb5a1fddadbc20893db4.svg"
+                    alt="arrow"
+                  />
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
