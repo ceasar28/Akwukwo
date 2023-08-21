@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Modal from "../components/DetailModal";
+import Link from "next/link";
 
 interface CardProps {
   image: string;
   title: string;
   author: string;
+  description: string;
+  content: string;
+  tokenId: number;
+  seller: string;
   //   volume: number;
   owner: string;
   price: number;
@@ -15,6 +20,10 @@ const Card: React.FC<CardProps> = ({
   image,
   title,
   author,
+  description,
+  content,
+  tokenId,
+  seller,
   //   volume,
   owner,
   price,
@@ -29,6 +38,10 @@ const Card: React.FC<CardProps> = ({
     Close(false);
   };
 
+  // const handleRead = () => {
+  //   Close(true);
+  // };
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <img src={image} alt={title} className="w-full h-40 object-cover" />
@@ -38,15 +51,27 @@ const Card: React.FC<CardProps> = ({
         {/* <p className="text-gray-600 mb-1"> {volume} available</p> */}
         <p className="text-gray-600 mb-1"> {owner}</p>
         <p className="text-green-600 font-semibold">
-          {price.toFixed(2)} Ethers
+          {/* //{price.toFixed(2)} Ethers */}
+          {price} Ethers
         </p>
-        <button
-          className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg"
-          onClick={handleModal}
-        >
-          {router.route === "/profile" ? "Read" : "View"}
-          {/* View */}
-        </button>
+
+        {router.route === "/profile" ? (
+          <Link
+            href={`https://gateway.pinata.cloud/ipfs/${content}`}
+            target="_blank"
+          >
+            <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg">
+              Read
+            </button>
+          </Link>
+        ) : (
+          <button
+            className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg"
+            onClick={handleModal}
+          >
+            View
+          </button>
+        )}
         {router.route === "/explore" ? (
           <button className="mt-2 mx-2 px-4 py-2 bg-blue-500 text-white rounded-lg">
             Buy
@@ -66,9 +91,12 @@ const Card: React.FC<CardProps> = ({
           image={image}
           title={title}
           author={author}
-          description="uweporwoeorwklkejrpoweowpwpl"
+          description={description}
+          content={content}
           owner={owner}
           price={price}
+          tokenId={tokenId}
+          seller={seller}
         ></Modal>
       ) : (
         <></>

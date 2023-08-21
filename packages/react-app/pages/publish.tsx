@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, useEffect } from "react";
-import { uploadJSONToIPFS, uploadFileToIPFS } from "../pinata";
+import { uploadJSONToIPFS, uploadFileToIPFS } from "../utils/pinata";
+import { createToken, getAllNFTs } from "../utils/functions";
 declare var window: any;
 
 const getEthereumObject = () => window.ethereum;
@@ -49,6 +50,7 @@ export default function Publish() {
   const [selectedPDF, setSelectedPDF] = useState<File | null>(null);
   const [pdfFileName, setPDFFileName] = useState<string | null>(null);
   const [textBoxValue, setTextBoxValue] = useState<string>("");
+  const [genre, setGenre] = useState<string>("");
   const [numberValue, setNumberValue] = useState<number | null>(null);
   const [priceValue, setPriceValue] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -81,6 +83,10 @@ export default function Publish() {
     setTextBoxValue(event.target.value);
   };
 
+  const handleGenreChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setGenre(event.target.value);
+  };
+
   const handleNumberChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = parseFloat(event.target.value);
     setNumberValue(isNaN(value) ? null : value);
@@ -99,6 +105,7 @@ export default function Publish() {
       selectedImage,
       selectedPDF,
       textBoxValue,
+      genre,
       numberValue,
       priceValue,
     });
@@ -108,18 +115,28 @@ export default function Publish() {
 
     try {
       if (pinPdf && pinImg) {
-        const meta = await uploadJSONToIPFS({
+        const metaData = await uploadJSONToIPFS({
           name: name,
+          description: textBoxValue,
+          image: pinImg.pinataURL,
+          attributes: [{ trait_type: "Booke", value: "book" }],
           author: author,
-          decription: textBoxValue,
-          imageurl: pinImg.pinataURL,
-          resourcesUrl: pinPdf.pinataURL,
+          genre: genre,
+          content: pinPdf.pinataHash,
         });
-        if (meta.pinataURL) {
-          setMessage("Minting..........");
+        if (metaData.pinataURL) {
+          let data: any = {
+            tokenURI: metaData.pinataURL,
+            price: priceValue,
+            number: numberValue,
+          };
+          console.log(wallet);
           // call the createtoken function here
+          const mint = await createToken(data);
+          setMessage("Minting..........");
+
+          console.log(mint);
         }
-        console.log(meta);
       }
     } catch (error) {
       setMessage("Please try again, there was an error");
@@ -151,6 +168,7 @@ export default function Publish() {
             className="form-input w-full"
             value={name}
             onChange={handleNameChange}
+            required
           />
         </div>
         <div className="mb-4">
@@ -166,6 +184,7 @@ export default function Publish() {
             className="form-input w-full"
             value={author}
             onChange={handleAuthorChange}
+            required
           />
         </div>
         <div className="mb-4">
@@ -177,6 +196,7 @@ export default function Publish() {
             id="image"
             className="form-input w-full"
             onChange={handleImageChange}
+            required
           />
           {previewImage && (
             <img src={previewImage} alt="Preview" className="mt-2 h-24" />
@@ -192,6 +212,7 @@ export default function Publish() {
             className="form-input w-full"
             accept=".pdf"
             onChange={handlePDFChange}
+            required
           />
           {pdfFileName && (
             <p className="mt-2">{`Selected PDF: ${pdfFileName}`}</p>
@@ -210,7 +231,26 @@ export default function Publish() {
             rows={4}
             value={textBoxValue}
             onChange={handleTextBoxChange}
+            required
           />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="genre">
+            Category/Genre
+          </label>
+
+          <select
+            id="genre"
+            className="form-input w-full"
+            value={genre !== null ? genre : ""}
+            onChange={handleGenreChange}
+            required
+          >
+            <option value="educational">Educational</option>
+            <option value="sci/fi">Science/Fiction</option>
+            <option value="romance">Romance</option>
+            <option value="children">Children</option>
+          </select>
         </div>
         <div className="mb-4">
           <label
@@ -225,6 +265,7 @@ export default function Publish() {
             className="form-input w-full"
             value={numberValue !== null ? numberValue : ""}
             onChange={handleNumberChange}
+            required
           />
         </div>
         <div className="mb-4">
@@ -237,6 +278,7 @@ export default function Publish() {
             className="form-input w-full"
             value={priceValue !== null ? priceValue : ""}
             onChange={handlePriceChange}
+            required
           />
         </div>
         <button
