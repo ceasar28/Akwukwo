@@ -15,22 +15,18 @@ const LandingPageSection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pt-10 gap-y-6 md:gap-x-6">
             <a
-              href="https://remix.ethereum.org/"
-              target="_blank"
+              href="/explore"
               rel="noopener"
             >
               <div className="bg-white rounded-lg border-borderColor border py-6 px-4 h-80 hover:border-blue relative group">
                 <h4 className="text-xl pb-1 text-blue font-latoBold">
-                  Remix Online IDE
+                  Connect Wallet to the blockchain
                 </h4>
                 <p className="text-sm text-gray font-sfProSemiBold pb-4">
-                  Web-based DevEnvironment
+                  easy wallet connection and more options
                 </p>
                 <p className="text-sm text-gray font-sfProRegular pb-4">
-                  Remix Online IDE is a powerful toolset for developing,
-                  deploying, debugging, and testing Ethereum and EVM-compatible
-                  smart contracts. It requires no setup and has a flexible,
-                  intuitive user interface.
+                  Built with celo-composer, which offers a seamless wallet.
                 </p>
                 <div className="flex absolute bottom-6 content-center">
                   <p className="text-sm text-blue font-sfProRegular mr-3.5">
