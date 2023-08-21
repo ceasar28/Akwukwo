@@ -1,5 +1,5 @@
 import React from "react";
-import celoSvg from "../assests/images/celo_isotype.svg";
+// import celoSvg from "../assests/images/celo_isotype.svg";
 
 const FooterSection: React.FC = () => {
   return (
@@ -7,13 +7,16 @@ const FooterSection: React.FC = () => {
       <div className="sm:container sm:m-auto pb-10 pt-20 mx-6">
         <div className="grid grid-cols-footer">
           <div className="col-start-1 col-end-6 md:col-start-auto md:col-end-auto">
-            <h1>Powered by Bunzz and celo</h1>
+            <h1>Powered by Celo</h1>
             <img
               width="100px"
-              src={celoSvg}
+              src="https://alfajores.celoscan.io/images/svg/brands/main.svg?v=23.8.2.0"
               alt="Celo"
               className="mb-11 md:mb-0"
             />
+          </div>
+          <div className="col-start-1 col-end-6 md:col-start-auto md:col-end-auto">
+            <h1> and Bunzz</h1>
             <img
               width="100px"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTNXUtcigVez4a4Sr_qLhztBdAJIyWDC5fK0j1aiSXGapxawsIJoy1q8G5maLYrL14Y6g&usqp=CAU"
@@ -21,6 +24,7 @@ const FooterSection: React.FC = () => {
               className="mb-11 md:mb-0"
             />
           </div>
+
           <div className="mb-11 md:mb-0">
             <h6 className="text-gray font-sfProRegular text-xs pb-4">
               Explore the world of digital possibilities
