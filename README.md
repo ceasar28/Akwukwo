@@ -18,15 +18,26 @@
 
 ## About The Project
 
-Akwụkwọ is an innovative NFT Book library Dapp, where creativity and ownership converge. It allows users to seamlessly mint, read, and showcase thier literary creations as unique NFTs on the blockchain. Gain control over thier work's by setting prices, selling, and even enabling resale with built-in royalty mechanisms.
+Akwụkwọ(Meaning Book) is an innovative NFT Book library Dapp, where creativity and ownership converge. It allows users to seamlessly mint, read, and showcase thier literary creations as unique NFTs on the blockchain. Gain control over thier work's by setting prices, selling, and even enabling resale with built-in royalty mechanisms.
 
 ![snapshot](<https://github.com/ceasar28/Akwukwo/blob/Dev/packages/react-app/assests/images/Screenshot%20(357).png>)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Services
+
+Akwukwo offers creators and readers different services ranging from
+
+# Mint/Publish e-books
+
+creators mints and lists thier work for free on the platforms, and also have the right to delist thier work anytime
+![snapshot](<https://github.com/ceasar28/Akwukwo/blob/Dev/packages/react-app/assests/images/Screenshot%20(363).png>)
+![snapshot](<https://github.com/ceasar28/Akwukwo/blob/Dev/packages/react-app/assests/images/Screenshot%20(364).png>)
+
 ## Built With
 
-_Your content here_
+- Solidity
+- Next js
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
