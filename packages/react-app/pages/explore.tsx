@@ -4,7 +4,12 @@ import { ethers } from "ethers";
 import NftCard from "../components/NftCard";
 import dummyData from "../utils/data";
 import Modal from "../components/DetailModal";
-import { getAllNFTs, tokenURI, GetIpfsUrlFromPinata } from "../utils/functions";
+import {
+  getAllNFTs,
+  tokenURI,
+  GetIpfsUrlFromPinata,
+  executeSale,
+} from "../utils/functions";
 declare var window: any;
 const getEthereumObject = () => window.ethereum;
 
@@ -119,6 +124,7 @@ export default function Explore() {
               price={item.price}
               tokenId={item.tokenId}
               seller={item.seller}
+              listed={item.listed}
             />
           ))}
         </div>

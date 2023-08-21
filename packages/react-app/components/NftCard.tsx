@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Modal from "../components/DetailModal";
+import { executeSale } from "../utils/functions";
 import Link from "next/link";
 
 interface CardProps {
@@ -14,6 +15,7 @@ interface CardProps {
   //   volume: number;
   owner: string;
   price: number;
+  listed: any;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -26,9 +28,24 @@ const Card: React.FC<CardProps> = ({
   seller,
   //   volume,
   owner,
+  listed,
   price,
 }) => {
   const [isOpen, Close] = useState<boolean | null>(false);
+
+  const sale: any = async () => {
+    let data = {
+      price: price,
+      tokenId: tokenId,
+    };
+    if (tokenId) {
+      const execute: any = await executeSale(data);
+      console.log(execute);
+      return execute;
+    }
+    alert("please connect your wallet..");
+  };
+
   const router: any = useRouter();
 
   const handleModal = () => {
@@ -49,7 +66,7 @@ const Card: React.FC<CardProps> = ({
         <h2 className="text-xl font-semibold mb-2">{title}</h2>
         <p className="text-gray-600 mb-1">By {author}</p>
         {/* <p className="text-gray-600 mb-1"> {volume} available</p> */}
-        <p className="text-gray-600 mb-1"> {owner}</p>
+        <p className="text-gray-600 mb-1"> {seller}</p>
         <p className="text-green-600 font-semibold">
           {/* //{price.toFixed(2)} Ethers */}
           {price} Ethers
@@ -73,7 +90,10 @@ const Card: React.FC<CardProps> = ({
           </button>
         )}
         {router.route === "/explore" ? (
-          <button className="mt-2 mx-2 px-4 py-2 bg-blue-500 text-white rounded-lg">
+          <button
+            onClick={sale}
+            className="mt-2 mx-2 px-4 py-2 bg-blue-500 text-white rounded-lg"
+          >
             Buy
           </button>
         ) : (
@@ -97,6 +117,7 @@ const Card: React.FC<CardProps> = ({
           price={price}
           tokenId={tokenId}
           seller={seller}
+          listed ={listed}
         ></Modal>
       ) : (
         <></>

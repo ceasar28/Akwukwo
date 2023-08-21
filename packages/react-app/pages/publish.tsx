@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, useEffect } from "react";
 import { uploadJSONToIPFS, uploadFileToIPFS } from "../utils/pinata";
 import { createToken, getAllNFTs } from "../utils/functions";
+import { useRouter } from "next/navigation";
 declare var window: any;
 
 const getEthereumObject = () => window.ethereum;
@@ -54,6 +55,7 @@ export default function Publish() {
   const [numberValue, setNumberValue] = useState<number | null>(null);
   const [priceValue, setPriceValue] = useState<number | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const router = useRouter();
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -134,6 +136,10 @@ export default function Publish() {
           // call the createtoken function here
           const mint = await createToken(data);
           setMessage("Minting..........");
+          if (mint) {
+            alert("Transaction completed");
+            router.push("/explore");
+          }
 
           console.log(mint);
         }
@@ -270,7 +276,7 @@ export default function Publish() {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="price">
-            Price
+            Price in Ether
           </label>
           <input
             type="number"
@@ -285,7 +291,7 @@ export default function Publish() {
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
-          Mint
+          Publish
         </button>
       </form>
       <h4>{message}</h4>

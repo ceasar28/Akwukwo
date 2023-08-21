@@ -79,3 +79,29 @@ export const executeSale = async (data: any) => {
 
   return transactionResponse;
 };
+
+export const listToken = async (data: any) => {
+  const tokenId = data.tokenId;
+  let price = (data.price * 10 ** 18).toString();
+  console.log(price);
+  const contract = await getContract();
+
+  //const options = { value: ethers.utils.parseUnits(price, "ether") };
+  //const options = { value: price };
+  //console.log(options);
+  // the lcost price value to be passed
+
+  const transactionResponse = await contract.listToken(tokenId, price);
+
+  return transactionResponse;
+};
+
+export const deListToken = async (data: any) => {
+  const tokenId = data.tokenId;
+
+  const contract = await getContract();
+
+  const transactionResponse = await contract.deListToken(tokenId);
+
+  return transactionResponse;
+};

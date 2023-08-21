@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { executeSale } from "../utils/functions";
+// import { useRouter } from "next/navigation";
+import {
+  executeSale,
+  listToken,
+  deListToken,
+  getAllNFTs,
+  getMyNFTs,
+} from "../utils/functions";
 declare var window: any;
 const getEthereumObject = () => window.ethereum;
 
@@ -49,6 +56,7 @@ interface ModalProps {
   price: number;
   tokenId: number;
   seller: string;
+  listed: any;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -63,9 +71,15 @@ const Modal: React.FC<ModalProps> = ({
   price,
   tokenId,
   seller,
+  listed,
 }) => {
   const [wallet, setWallet] = useState<string | null>(null);
+  useState<number | null>(null);
+  const [priceValue, setPriceValue] = useState<number | null>(null);
+
   const router: any = useRouter();
+  console.log(listed);
+  // const router = useRouter();
 
   const sale: any = async () => {
     let data = {
@@ -74,8 +88,52 @@ const Modal: React.FC<ModalProps> = ({
     };
     if (wallet) {
       const execute: any = await executeSale(data);
+
       console.log(execute);
       return execute;
+    }
+    alert("please connect your wallet..");
+  };
+
+  const list: any = async () => {
+    let data = {
+      price: priceValue,
+      tokenId: tokenId,
+    };
+    if (wallet && priceValue !== null) {
+      const execute: any = await listToken(data);
+      if (execute) {
+        alert("transaction processed");
+        await getMyNFTs();
+        console.log(execute);
+        return execute;
+      }
+    }
+    alert("please make sure price is not 0 and your wallet is connected.");
+  };
+  const handlePriceChange = (event: any) => {
+    const value = parseFloat(event.target.value);
+    console.log(value);
+    setPriceValue(isNaN(value) ? null : value);
+  };
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    await list();
+  };
+
+  const deList: any = async () => {
+    let data = {
+      tokenId: tokenId,
+    };
+    if (wallet) {
+      const execute: any = await deListToken(data);
+      if (execute) {
+        alert("transaction processed");
+        await getMyNFTs();
+        console.log(execute);
+        return execute;
+      }
     }
     alert("please connect your wallet..");
   };
@@ -97,14 +155,49 @@ const Modal: React.FC<ModalProps> = ({
         <div className="modal-image mr-4">
           <img src={image} alt={title} className="w-40 h-auto object-cover" />
           {router.route === "/profile" ? (
-            <Link
-              href={`https://gateway.pinata.cloud/ipfs/${content}`}
-              target="_blank"
-            >
-              <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg w-full">
-                Read
-              </button>
-            </Link>
+            <>
+              <Link
+                href={`https://gateway.pinata.cloud/ipfs/${content}`}
+                target="_blank"
+              >
+                <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg w-full">
+                  Read
+                </button>
+              </Link>
+              {listed == true ? (
+                <button
+                  onClick={deList}
+                  className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg w-full"
+                >
+                  Delist
+                </button>
+              ) : (
+                <>
+                  <form onSubmit={handleSubmit}>
+                    <button
+                      type="submit"
+                      className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg w-full"
+                    >
+                      list
+                    </button>
+                    <label
+                      className="block text-gray-700 font-bold mb-2"
+                      htmlFor="price"
+                    >
+                      New Price in ether
+                    </label>
+                    <input
+                      type="number"
+                      id="price"
+                      className="form-input w-full border-2  border-black"
+                      value={priceValue !== null ? priceValue : ""}
+                      onChange={handlePriceChange}
+                      required
+                    />
+                  </form>
+                </>
+              )}
+            </>
           ) : (
             <button
               onClick={sale}

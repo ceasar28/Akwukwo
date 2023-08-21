@@ -67,6 +67,7 @@ export default function Profile() {
           tokenId: i.tokenId.toNumber(),
           seller: i.seller,
           owner: i.owner,
+          listed: i.currentlyListed,
           image: metadata.image,
           name: metadata.name,
           author: metadata.author,
@@ -112,6 +113,7 @@ export default function Profile() {
               owner={item.owner}
               seller={item.seller}
               price={item.price}
+              listed={item.listed}
             />
           ))}
         </div>
