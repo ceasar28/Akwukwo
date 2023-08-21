@@ -5,6 +5,7 @@ import FormData from "form-data";
 interface PinataResponse {
   success: boolean;
   pinataURL?: string;
+  pinataHash?: string;
   message?: string;
 }
 
@@ -94,10 +95,11 @@ export const uploadFileToIPFS = async (
       },
     });
 
-    console.log("image uploaded", response.data.IpfsHash);
+    console.log("file uploaded", response.data.IpfsHash);
     return {
       success: true,
       pinataURL: `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`,
+      pinataHash: response.data.IpfsHash,
     };
   } catch (error: any) {
     console.log(error);
