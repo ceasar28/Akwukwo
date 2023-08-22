@@ -84,7 +84,7 @@ By deafault the server start automatically at `http://localhost:3000`.
 
 ## Demo
 
-<div style="position: relative; padding-bottom: 56.22254758418741%; height: 0;"><iframe src="https://www.loom.com/embed/aca9cef1a9bd41a8bc93fb81c255a8df?sid=f387924a-25b7-43fd-b80d-9c6de53e15dd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<iframe src="https://www.loom.com/embed/aca9cef1a9bd41a8bc93fb81c255a8df?sid=f387924a-25b7-43fd-b80d-9c6de53e15dd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 
 ## Links to Resources
 
