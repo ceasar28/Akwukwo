@@ -109,25 +109,28 @@ export default function Explore() {
       <div>
         <h1> All listed Books</h1>
         <p>total Books: {allNfts.length}</p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 sm:p-6 lg:p-8">
-          {allNfts.map((item: any, index: any) => (
-            <NftCard
-              key={index}
-              image={item.image}
-              title={item.title}
-              author={item.author}
-              description={item.description}
-              content={item.content}
-              //   volume={item.volume}s
-              owner={item.owner}
-              price={item.price}
-              tokenId={item.tokenId}
-              seller={item.seller}
-              listed={item.listed}
-            />
-          ))}
-        </div>
+        {allNfts.length == 0 ? (
+          <h1 className=" text-xl "> LOADING......</h1>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 sm:p-6 lg:p-8">
+            {allNfts.map((item: any, index: any) => (
+              <NftCard
+                key={index}
+                image={item.image}
+                title={item.title}
+                author={item.author}
+                description={item.description}
+                content={item.content}
+                //   volume={item.volume}s
+                owner={item.owner}
+                price={item.price}
+                tokenId={item.tokenId}
+                seller={item.seller}
+                listed={item.listed}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
