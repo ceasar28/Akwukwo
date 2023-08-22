@@ -82,10 +82,11 @@ By deafault the server start automatically at `http://localhost:3000`.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-📕
-
 ## Links to Resources
 
 - Link to live Dapp: https://akwukwo-nine.vercel.app/
 - Contract Address: 0x4C0532939Fe4aac1642D4BD022d49Dba05F4b708
-- Link to feedback and DEMO:
+- Link to bunzz deployed contract module used: https://app.bunzz.dev/module-templates/5e4f67c7-8be1-493e-913b-ff7840714276?version=1.0.0
+- Link to celoscan: https://alfajores.celoscan.io/address/0x4c0532939fe4aac1642d4bd022d49dba05f4b708
+- Link to DEMO: https://www.loom.com/share/aca9cef1a9bd41a8bc93fb81c255a8df?t=325&sid=4053dd0b-6b41-4dc9-9450-28eb69ee3b8d
+- Link to experience feedback : https://docs.google.com/document/d/1OkRxW6wHMFErXmwGdkyKNbbkoRkHhI-IBmmszO2mnx4/edit?usp=sharing
