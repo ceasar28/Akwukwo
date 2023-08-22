@@ -42,6 +42,7 @@ Giving both Creators and Readers power over digital books, Reader can decide to 
 
 ## Built With
 
+- celo-composer
 - Solidity
 - Nextjs
 - React
@@ -62,12 +63,29 @@ Giving both Creators and Readers power over digital books, Reader can decide to 
 
 git clone
 
+## How to Use
+
+### dev mode
+
+1. Clone the Repository
+
+- `git clone https://github.com/ceasar28/Akwukwo.git`
+  ` cd Akwukwo`
+
+2. install dependecies
+   `yarn install`
+   ` cd packages/react-app`
+3. Start the dev server
+   `yarn run Dev `
+
+By deafault the server start automatically at `http://localhost:3000`.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-📕 Read the docs: <https://docs.soliditylang.org>
+📕
 
--## Contact
+## Links to Resources
 
-_Your content here_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+- Link to live Dapp: https://akwukwo-nine.vercel.app/
+- Contract Address: 0x4C0532939Fe4aac1642D4BD022d49Dba05F4b708
+- Link to feedback and DEMO:
