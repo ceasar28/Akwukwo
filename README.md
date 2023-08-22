@@ -82,12 +82,11 @@ By deafault the server start automatically at `http://localhost:3000`.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Demo
-
-<iframe src="https://www.loom.com/embed/aca9cef1a9bd41a8bc93fb81c255a8df?sid=f387924a-25b7-43fd-b80d-9c6de53e15dd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-
 ## Links to Resources
 
 - Link to live Dapp: https://akwukwo-nine.vercel.app/
 - Contract Address: 0x4C0532939Fe4aac1642D4BD022d49Dba05F4b708
-- Link to DEMO: https://www.loom.com/share/aca9cef1a9bd41a8bc93fb81c255a8df?t=325&sid=163a71f9-07b5-45be-b088-4a2c5806d893
+- Link to bunzz deployed contract: https://app.bunzz.dev/dapps/1918132f-681e-436a-9768-268337937c0f/dashboard
+- Link to celoscan: 
+- Link to DEMO: https://www.loom.com/share/aca9cef1a9bd41a8bc93fb81c255a8df?t=325&sid=4053dd0b-6b41-4dc9-9450-28eb69ee3b8d
+- Link to experience feedback : https://docs.google.com/document/d/1OkRxW6wHMFErXmwGdkyKNbbkoRkHhI-IBmmszO2mnx4/edit?usp=sharing
