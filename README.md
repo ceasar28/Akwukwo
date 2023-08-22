@@ -82,10 +82,12 @@ By deafault the server start automatically at `http://localhost:3000`.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-📕
+## Demo
+
+<div style="position: relative; padding-bottom: 56.22254758418741%; height: 0;"><iframe src="https://www.loom.com/embed/aca9cef1a9bd41a8bc93fb81c255a8df?sid=f387924a-25b7-43fd-b80d-9c6de53e15dd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ## Links to Resources
 
 - Link to live Dapp: https://akwukwo-nine.vercel.app/
 - Contract Address: 0x4C0532939Fe4aac1642D4BD022d49Dba05F4b708
-- Link to feedback and DEMO:
+- Link to DEMO: https://www.loom.com/share/aca9cef1a9bd41a8bc93fb81c255a8df?t=325&sid=163a71f9-07b5-45be-b088-4a2c5806d893
