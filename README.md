@@ -47,6 +47,7 @@ Giving both Creators and Readers power over digital books, the Reader can decide
 - Nextjs
 - React
 - Typescript
+- bunzz
 
 ## Deployed on Celo Using Bunzz
 
