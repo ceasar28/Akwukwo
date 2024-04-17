@@ -4,7 +4,7 @@ declare var window: any;
 
 export const getContract = async (): Promise<ethers.Contract> => {
   const CONTRACT_ADDRESS: string | undefined =
-    "0x4C0532939Fe4aac1642D4BD022d49Dba05F4b708";
+    "0x7da78c873f8f0e27050b97ce46802c6569a540ca";
 
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   // const provider = new ethers.providers.JsonRpcProvider(
